@@ -3,10 +3,16 @@ Set up your Voiceflow project with Node.js in a matter of minutes. Node.js is a 
 
 This example enables you to chat with your project on the terminal.
 
+## Documentation
+For additional information about the Voiceflow API, visit the [documentation](https://www.voiceflow.com/api/dialog-manager).
+
 ## Setup
 1. If you do not have node, install *Node.js* and *npm* (node package manager) from [nodejs.org](https://nodejs.org/), or follow an equivalent guide.
 2. In this folder, run `npm install`.
-3. Replace `'YOUR_API_KEY_HERE'` and `'YOUR_VERSION_ID_HERE'` in `index.js` with your API Key and Voiceflow project version ID. You can find them under the integrations tab: ![Screen Shot 2021-08-13 at 6 00 07 PM](https://user-images.githubusercontent.com/5643574/129422436-04d964d3-85a0-402d-ae5e-d6e84723da5e.png)
+3. Replace `'YOUR_API_KEY_HERE'` and `'YOUR_VERSION_ID_HERE'` in `index.js` with your API Key and Voiceflow project version ID. You can find them under the integrations tab: 
+
+<img src="https://user-images.githubusercontent.com/5643574/129422436-04d964d3-85a0-402d-ae5e-d6e84723da5e.png" width=800 />
+
 4. run `npm run start` to start your chat!
 
 ## Example
