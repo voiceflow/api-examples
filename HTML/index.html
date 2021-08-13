@@ -1,0 +1,60 @@
+<!-- IT IS NOT RECOMMENDED TO CALL THE API DIRECTLY FROM THE CLIENT, YOUR API KEY WILL BE EXPOSED -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    </head>
+    <body>
+        <label for="name">username:</label>
+        <input id="name" name="name" type="text" value="joe" placeholder="your name here" />
+        <hr/>
+        <label for="name">message:</label>
+        <input id="user-input" name="user-input" type="text" placeholder="Enter your response..."/>
+        <button id="send" type="button">Send</button>
+        <ul id="root"></ul>
+
+        <script defer>
+            const API_KEY = "VF.6116ee72c7cfab001b4284d8.H5ufoujmOtVJY81LJS7UFSiZF1rDZPU7VPAxHmXVjp";
+            const VERSION_ID = "60788f95a7094c0007de20b3";
+
+            const interact = (request) => 
+                // call the voiceflow api with the user's name & request, get back a response
+                fetch(`https://general-runtime.voiceflow.com/state/${VERSION_ID}/user/${encodeURI($("#name").val())}/interact`, {
+                    method: 'POST',
+                    headers: { Authorization: API_KEY, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ request }),
+                })
+                .then((res) => res.json())
+                .then((trace) => {
+                    console.log("API RESPONSE BODY:", trace);
+                    trace.forEach((trace) => {
+                        if (trace.type === 'speak') {
+                            $("#root").append(`<li>${trace.payload.message}</li>`)
+                        } else if (trace.type === 'text') {
+                            $("#root").append(`<li>${trace.payload.text}</li>`)
+                        } else if (trace.type === 'end') {
+                            $("#root").append(`<li><b>The End!</b></li>`)
+                        }
+                    });
+                })
+
+            // Call an Interaction Method to advance the conversation based on `userInput`.
+            interact({ type: 'launch' });
+
+            // Click handler - This advances the conversation session
+            async function handleSend() {
+                // Get the user's response to the VF App's dialogue
+                const userInput = $("#user-input").val();
+                $("#root").append(`<li> > ${userInput}</li>`)
+                // clear the input field
+                $("#user-input").val('');
+
+                // Call an Interaction Method to advance the conversation based on `userInput`.
+                interact({ type: 'text', payload: userInput });
+            }
+
+            // Register the click handler on a button
+            $("#send").on("click", handleSend);
+        </script>
+    </body>
+</html>
