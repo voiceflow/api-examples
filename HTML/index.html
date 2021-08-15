@@ -28,10 +28,8 @@
                 .then((trace) => {
                     console.log("API RESPONSE BODY:", trace);
                     trace.forEach((trace) => {
-                        if (trace.type === 'speak') {
+                        if (trace.type === 'speak' || trace.type === 'text') {
                             $("#root").append(`<li>${trace.payload.message}</li>`)
-                        } else if (trace.type === 'text') {
-                            $("#root").append(`<li>${trace.payload.text}</li>`)
                         } else if (trace.type === 'end') {
                             $("#root").append(`<li><b>The End!</b></li>`)
                         }

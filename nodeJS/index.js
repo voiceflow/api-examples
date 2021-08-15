@@ -17,10 +17,8 @@ async function interact(userID, request){
     });
     // loop through the response
     for (const trace of response.data) {
-        if (trace.type === 'speak') {
+        if (trace.type === 'speak' || trace.type === 'text') {
             console.log(trace.payload.message);
-        } else if (trace.type === 'text') {
-            console.log(trace.payload.text);
         } else if (trace.type === 'end') {
             // an end trace means the the voiceflow dialog has ended
             return false;

@@ -16,7 +16,7 @@ For additional information about the Voiceflow API, visit the [documentation](ht
 4. run `npm run start` to start your chat!
 
 ## Example
-What it looks like in action:
+What it might look like in action:
 ```
 ➜  nodeJS git:(master) ✗ npm run start
 

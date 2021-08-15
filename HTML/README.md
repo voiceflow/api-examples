@@ -14,6 +14,6 @@ For additional information about the Voiceflow API, visit the [documentation](ht
 2. open `index.html` on any browser to start your chat!
 
 ## Example
-What it looks like in action:
+What it might look like in action:
 
 <img src="https://user-images.githubusercontent.com/5643574/129423633-295adc7e-ba38-4845-af08-c410e250f75a.png" width=800 />
