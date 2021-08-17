@@ -4,8 +4,8 @@ import requests # pip install requests
 api_key = 'YOUR_API_KEY_HERE' # it should look like this: VF.XXXXXXX.XXXXXX... keep this a secret!
 version_id = 'YOUR_VERSION_ID_HERE' # your voiceflow project versionID, find it under the 'integrations' tab
 
+# user_id defines who is having the conversation, e.g. steve, john.doe@gmail.com, username_464
 def interact(user_id, request):
-    # Start a conversation
     response = requests.post(
         f'https://general-runtime.voiceflow.com/state/{version_id}/user/{user_id}/interact',
         json={ 'request': request },
