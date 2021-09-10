@@ -14,9 +14,7 @@ For additional information about the Voiceflow API, visit the [documentation](ht
 
 1. Replace `'YOUR_API_KEY_HERE'` and `'YOUR_VERSION_ID_HERE'` in `index.html` with your API Key and Voiceflow project version ID.
    You can find them under the integrations tab:
-
-<img src="https://user-images.githubusercontent.com/5643574/129422436-04d964d3-85a0-402d-ae5e-d6e84723da5e.png" width=800 />
-
+   <img src="https://user-images.githubusercontent.com/5643574/129422436-04d964d3-85a0-402d-ae5e-d6e84723da5e.png" width=800 />
 2. Open `index.html` on any browser to start your chat!
 
 ## Example
