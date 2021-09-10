@@ -1,8 +1,7 @@
-# Voiceflow API Node.js Example
+# Voiceflow API Nim Example
 
-Set up your Voiceflow project with Node.js in a matter of minutes.
-Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
-This example can be adapted to run as an HTTP server.
+Set up your Voiceflow project with Nim in a matter of minutes.
+[Nim](https://nim-lang.org/) is a statically typed compiled systems programming language.
 
 This example lets you chat with your project via the terminal.
 
@@ -12,21 +11,20 @@ For additional information about the Voiceflow API, visit the [documentation](ht
 
 ## Setup
 
-1. If you do not have node, install _Node.js_ and _npm_ from [nodejs.org](https://nodejs.org/), or follow an equivalent guide.
-2. In this folder, run `npm install`.
-3. Replace `'YOUR_API_KEY_HERE'` and `'YOUR_VERSION_ID_HERE'` in `index.js` with your API Key and Voiceflow project version ID.
+1. If you do not yet have Nim installed, [install it from here](https://nim-lang.org/install.html).
+2. Replace `'YOUR_API_KEY_HERE'` and `'YOUR_VERSION_ID_HERE'` in `src/voiceflow.nim` with your API Key and Voiceflow project version ID.
    You can find them under the integrations tab:
 
    <img src="https://user-images.githubusercontent.com/5643574/129422436-04d964d3-85a0-402d-ae5e-d6e84723da5e.png" width=800 />
 
-4. run `npm start` to start your chat!
+3. Run `nimble run` to compile and run the app.
 
 ## Example
 
 What it might look like in action:
 
 ```
-$ npm start
+$ nimble run
 
 > What is your name?: tyler
 what can I do for you?

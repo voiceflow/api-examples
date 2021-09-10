@@ -1,23 +1,28 @@
 # Voiceflow API Python Example
+
 Set up your Voiceflow project with Python in a matter of minutes. This example can be adapted to run as a server with Django or Flask.
 
 This example enables you to chat with your project on the terminal.
 
 ## Documentation
+
 For additional information about the Voiceflow API, visit the [documentation](https://www.voiceflow.com/api/dialog-manager).
 
 ## Setup
+
 1. If you do not have python, install Python from [python.org](https://www.python.org/downloads), or follow an equivalent guide.
-2. Replace `'YOUR_API_KEY_HERE'` and `'YOUR_VERSION_ID_HERE'` in `index.py` with your API Key and Voiceflow project version ID. You can find them under the integrations tab: 
+2. Replace `'YOUR_API_KEY_HERE'` and `'YOUR_VERSION_ID_HERE'` in `index.py` with your API Key and Voiceflow project version ID. You can find them under the integrations tab:
 
-<img src="https://user-images.githubusercontent.com/5643574/129422436-04d964d3-85a0-402d-ae5e-d6e84723da5e.png" width=800 />
+  <img src="https://user-images.githubusercontent.com/5643574/129422436-04d964d3-85a0-402d-ae5e-d6e84723da5e.png" width=800 />
 
-3. run `python index.py` to start your chat! 
+3. run `python index.py` to start your chat!
 
 (If you have both Python 2 and Python 3 on your computer, you might likely need to run `python3 index.py`).
 
 ## Example
+
 What it might look like in action:
+
 ```
 ➜  python git:(master) ✗ python index.py
 > What is your name?
