@@ -40,5 +40,5 @@ sending the email for tyler@voiceflow.com called "How was your day?". Is that co
 ...
 > Say something: yes
 successfully sent the email for tyler@voiceflow.com called "How was your day?"
-The end! Start me again with `npm start`
+The end!
 ```
