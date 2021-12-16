@@ -1,8 +1,7 @@
 # Voiceflow API Rust Example
 
 Set up your Voiceflow project with Rust in a matter of minutes.
-Rust is a general-purpose programming language empowering everyone
-to build reliable and efficient software
+Rust is a general-purpose programming language empowering everyone to build reliable and efficient software.
 This example can be adapted to run as an HTTP server.
 
 This example lets you chat with your project via the terminal.
