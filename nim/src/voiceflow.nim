@@ -5,8 +5,7 @@ import rdstdin
 import json
 import strformat
 
-const apiKey = "YOUR_API_KEY_HERE" # it should look like this: VF.XXXXXXX.XXXXXX... keep this a secret!
-const versionID = "YOUR_VERSION_ID_HERE" # your Voiceflow project versionID, find it under the "integrations" tab
+const apiKey = "YOUR_API_KEY_HERE" # it should look like this: VF.DM.XXXXXXX.XXXXXX... keep this a secret!
 
 var http = newHttpClient()
 
@@ -14,7 +13,7 @@ proc interact(userID: string, request: JsonNode): bool =
   echo "..."
 
   let headers = newHttpHeaders({"Content-Type": "application/json", "Authorization": apiKey})
-  let url = fmt"https://general-runtime.voiceflow.com/state/{versionID}/user/{userID}/interact"
+  let url = fmt"https://general-runtime.voiceflow.com/state/user/{userID}/interact"
 
   # call the Voiceflow API with the user's name & request, get back a response
   let response = http.request(url, HttpPost, $(%*request), headers)

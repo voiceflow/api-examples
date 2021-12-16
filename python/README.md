@@ -11,7 +11,7 @@ For additional information about the Voiceflow API, visit the [documentation](ht
 ## Setup
 
 1. If you do not have python, install Python from [python.org](https://www.python.org/downloads), or follow an equivalent guide.
-2. Replace `'YOUR_API_KEY_HERE'` and `'YOUR_VERSION_ID_HERE'` in `index.py` with your API Key and Voiceflow project version ID. You can find them under the integrations tab:
+2. Replace `'YOUR_API_KEY_HERE'` in `index.py` with your Dialog Manager API Key. You can find it under the integrations tab:
 
   <img src="https://user-images.githubusercontent.com/5643574/129422436-04d964d3-85a0-402d-ae5e-d6e84723da5e.png" width=800 />
 

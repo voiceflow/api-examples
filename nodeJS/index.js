@@ -2,8 +2,7 @@
 const axios = require("axios");
 const { cli } = require("cli-ux");
 
-const API_KEY = "YOUR_API_KEY_HERE"; // it should look like this: VF.XXXXXXX.XXXXXX... keep this a secret!
-const VERSION_ID = "YOUR_VERSION_ID_HERE"; // your Voiceflow project versionID, find it under the "integrations" tab
+const API_KEY = "YOUR_API_KEY_HERE"; // it should look like this: VF.DM.XXXXXXX.XXXXXX... keep this a secret!
 
 // send an interaction to the Voiceflow API, and log the response, returns true if there is a next step
 async function interact(userID, request) {
@@ -12,7 +11,7 @@ async function interact(userID, request) {
   // call the Voiceflow API with the user's name & request, get back a response
   const response = await axios({
     method: "POST",
-    url: `https://general-runtime.voiceflow.com/state/${VERSION_ID}/user/${userID}/interact`,
+    url: `https://general-runtime.voiceflow.com/state/user/${userID}/interact`,
     headers: { Authorization: API_KEY },
     data: { request },
   });

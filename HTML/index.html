@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
         <label for="name">username:</label>
@@ -14,12 +14,11 @@
         <ul id="root"></ul>
 
         <script defer>
-            const API_KEY = "YOUR_API_KEY_HERE"; // it should look like this: VF.XXXXXXX.XXXXXX... keep this a secret!
-            const VERSION_ID = "YOUR_VERSION_ID_HERE"; // your Voiceflow project versionID, find it under the "integrations" tab
+            const API_KEY = "YOUR_API_KEY_HERE"; // it should look like this: VF.DM.XXXXXXX.XXXXXX... keep this a secret!
 
-            const interact = (request) => 
+            const interact = (request) =>
                 // call the voiceflow api with the user's name & request, get back a response
-                fetch(`https://general-runtime.voiceflow.com/state/${VERSION_ID}/user/${encodeURI($("#name").val())}/interact`, {
+                fetch(`https://general-runtime.voiceflow.com/state/user/${encodeURI($("#name").val())}/interact`, {
                     method: 'POST',
                     headers: { Authorization: API_KEY, 'Content-Type': 'application/json' },
                     body: JSON.stringify({ request }),

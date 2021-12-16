@@ -2,13 +2,12 @@ use promptly::prompt;
 use reqwest::{blocking, header};
 use serde_json::{json, Value as JsonValue};
 
-const API_KEY: &str = "YOUR_API_KEY_HERE"; // it should look like this: VF.XXXXXXX.XXXXXX... keep this a secret!
-const VERSION_ID: &str = "YOUR_VERSION_ID_HERE"; // your Voiceflow project versionID, find it under the "integrations" tab
+const API_KEY: &str = "YOUR_API_KEY_HERE"; // it should look like this: VF.DM.XXXXXXX.XXXXXX... keep this a secret!
 
 const API_URL: &str = "https://general-runtime.voiceflow.com";
 
 fn interact(user_id: &str, request: JsonValue) -> Result<bool, Box<dyn std::error::Error>> {
-    let url = format!("{}/state/{}/user/{}/interact", API_URL, VERSION_ID, user_id);
+    let url = format!("{}/state/user/{}/interact", API_URL, user_id);
 
     // call the Voiceflow API with the user's name & request, get back a response
     let client = blocking::Client::new();
