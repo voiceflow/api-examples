@@ -1,8 +1,7 @@
 // Import types using skypack for deno support
 import { Request } from "https://cdn.skypack.dev/@voiceflow/base-types";
 
-const API_KEY = "YOUR_API_KEY_HERE"; // it should look like this: VF.XXXXXXX.XXXXXX... keep this a secret!
-const VERSION_ID = "YOUR_VERSION_ID_HERE"; // your Voiceflow project versionID, find it under the "integrations" tab
+const API_KEY = "YOUR_API_KEY_HERE"; // it should look like this: VF.DM.XXXXXXX.XXXXXX... keep this a secret!
 
 const API_URL = `https://general-runtime.voiceflow.com/`;
 
@@ -11,7 +10,7 @@ async function interact<R extends typeof Request.BaseRequest>(
   userID: string,
   request: R,
 ): Promise<boolean> {
-  const url = new URL(`state/${VERSION_ID}/user/${userID}/interact`, API_URL);
+  const url = new URL(`state/user/${userID}/interact`, API_URL);
 
   // call the Voiceflow API with the user's name & request, get back a response
   const response = await fetch(url, {
