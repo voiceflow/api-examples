@@ -1,4 +1,3 @@
-use anyhow::Result;
 use promptly::prompt;
 use reqwest::{blocking, header};
 use serde_json::{json, Value as JsonValue};
@@ -8,7 +7,7 @@ const VERSION_ID: &str = "YOUR_VERSION_ID_HERE"; // your Voiceflow project versi
 
 const API_URL: &str = "https://general-runtime.voiceflow.com";
 
-fn interact(user_id: &str, request: JsonValue) -> Result<bool> {
+fn interact(user_id: &str, request: JsonValue) -> Result<bool, Box<dyn std::error::Error>> {
     let url = format!("{}/state/{}/user/{}/interact", API_URL, VERSION_ID, user_id);
 
     // call the Voiceflow API with the user's name & request, get back a response
@@ -33,7 +32,7 @@ fn interact(user_id: &str, request: JsonValue) -> Result<bool> {
     Ok(true)
 }
 
-fn main() -> Result<()> {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let user_id: String = prompt("> What is your name?")?;
     // send a simple launch request starting the dialog
     let mut is_running = interact(&user_id, json!({"request": {"type": "launch"}}))?;
