@@ -1,14 +1,18 @@
 import './App.css';
 import React, {useState} from "react";
 
+const API_KEY = 'YOUR_API_KEY_HERE'; // change this to YOUR API key, it should look like this: VF.DM.XXXXXXX.XXXXXX... keep this a secret!
+
+const RUNTIME_API_URL = 'https://general-runtime.voiceflow.com/' // change this to whatever your API URL is
 
 const App = props => {
-  const apiKey = 'YOUR_API_KEY_HERE'; // change this to YOUR API key, it should look like this: VF.DM.XXXXXXX.XXXXXX... keep this a secret!
+  
   const [user, setUser] = useState("");
   const [message, setMsg] = useState("");
   const [resArr, updateArr] = useState([]);
+  
   const handleClick = async() => {
-    let data = await fetch(`https://general-runtime.voiceflow.com/`, { // change this to whatever your API URL is
+    let data = await fetch(RUNTIME_API_URL, { 
       headers: { Authorization: apiKey, 'Content-Type': 'application/json' },
       method: "POST",
       body: JSON.stringify({
@@ -25,18 +29,12 @@ const App = props => {
         updateArr(arr => [...arr, message + ">" + postRes[i].payload.message]);
       }
     }
-    console.log(message);
-    console.log(user);
   }
 
 
-  const handleChangeUser = (event) => {
-    setUser(event.target.value);
-  }
+  const handleChangeUser = (event) => setUser(event.target.value);
 
-  const handleChange = (event) => {
-    setMsg(event.target.value);
-  }
+  const handleChange = (event) => setMsg(event.target.value);
 
   return (
     
